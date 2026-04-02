@@ -39,6 +39,8 @@ Route::delete('/movies/{movie}', [MovieController::class, 'destroy']);
  * 
  * I added the route for the update function
  * 
+ * I added the route for the destroy function
+ * 
  */
 
 Route::get('/directors', [DirectorController::class, 'index']);
@@ -48,3 +50,5 @@ Route::get('/directors/{director}', [DirectorController::class, 'show']);
 Route::post('/directors', [DirectorController::class, 'store']);
 
 Route::put('/directors/{director}', [DirectorController::class, 'update']);
+
+Route::delete('/directors/{director}', [DirectorController::class, 'destroy']);
