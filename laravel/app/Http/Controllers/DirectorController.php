@@ -13,6 +13,8 @@ use Illuminate\Http\Request;
  * the function "show" was added as well
  * 
  * I added the "store" function to be able to add new directors to the database
+ * 
+ * I added the "update" function to be able to update the directors as well
  */
 
 class DirectorController extends Controller
@@ -43,10 +45,22 @@ class DirectorController extends Controller
 
         $director = Director::make([
             'name' => $name,
-       ]);
+        ]);
 
         $director->save();
 
         return $director;
     }
+
+    public function update(Request $request, Director $director)
+    {
+        if ($request->has('name')) {
+            $director->name = $request->input('name');
+        }
+
+        $director->save();
+
+        return $director;
+    }
+    
 }
