@@ -15,6 +15,8 @@ use Illuminate\Http\Request;
  * I added the "store" function to be able to add new directors to the database
  * 
  * I added the "update" function to be able to update the directors as well
+ * 
+ * Lastly I added the "destroy" function to be able to delete directors from the database
  */
 
 class DirectorController extends Controller
@@ -62,5 +64,9 @@ class DirectorController extends Controller
 
         return $director;
     }
-    
+
+    public function destroy(Director $director)
+    {
+        $director->delete();
+    }
 }
