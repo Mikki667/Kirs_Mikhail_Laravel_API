@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
  * 
  * By adding functions to the controller I added an "index" function 
  * 
+ * the function "show" was added as well
  */
 
 class DirectorController extends Controller
@@ -27,5 +28,10 @@ class DirectorController extends Controller
 
         $directors = $directorsQuery->get();
         return $directors;
+    }
+
+    public function show(Director $director)
+    {
+        return $director;
     }
 }

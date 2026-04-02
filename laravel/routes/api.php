@@ -33,8 +33,10 @@ Route::delete('/movies/{movie}', [MovieController::class, 'destroy']);
 /*
  * Here I added a route for my index functiom for the directors
  * 
- * 
+ * I added the route for the show function
  * 
  */
 
 Route::get('/directors', [DirectorController::class, 'index']);
+
+Route::get('/directors/{director}', [DirectorController::class, 'show']);
