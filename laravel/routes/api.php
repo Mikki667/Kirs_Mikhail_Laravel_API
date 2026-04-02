@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MovieController;
+use App\Http\Controllers\DirectorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,3 +29,14 @@ Route::post('/movies', [MovieController::class, 'store']);
 Route::put('/movies/{movie}', [MovieController::class, 'update']);
 
 Route::delete('/movies/{movie}', [MovieController::class, 'destroy']);
+
+/*
+ * Here I added a route for my index functiom for the directors
+ * 
+ * I added the route for the show function
+ * 
+ */
+
+Route::get('/directors', [DirectorController::class, 'index']);
+
+Route::get('/directors/{director}', [DirectorController::class, 'show']);
