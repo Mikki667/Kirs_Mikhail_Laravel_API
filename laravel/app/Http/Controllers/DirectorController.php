@@ -11,6 +11,8 @@ use Illuminate\Http\Request;
  * By adding functions to the controller I added an "index" function 
  * 
  * the function "show" was added as well
+ * 
+ * I added the "store" function to be able to add new directors to the database
  */
 
 class DirectorController extends Controller
@@ -32,6 +34,19 @@ class DirectorController extends Controller
 
     public function show(Director $director)
     {
+        return $director;
+    }
+
+    public function store(Request $request)
+    {
+        $name = $request->input('name');
+
+        $director = Director::make([
+            'name' => $name,
+       ]);
+
+        $director->save();
+
         return $director;
     }
 }

@@ -35,8 +35,12 @@ Route::delete('/movies/{movie}', [MovieController::class, 'destroy']);
  * 
  * I added the route for the show function
  * 
+ * I added the route for the store function
+ * 
  */
 
 Route::get('/directors', [DirectorController::class, 'index']);
 
 Route::get('/directors/{director}', [DirectorController::class, 'show']);
+
+Route::post('/directors', [DirectorController::class, 'store']);
