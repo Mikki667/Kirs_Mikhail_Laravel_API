@@ -59,7 +59,7 @@ class MovieSeeder extends Seeder
         Movie::factory()->create([
             'title' => 'The Wolf of Wall Street',
             'director_id' => 2,
-            'image_url' => 'images/movies/the_wolf_of_wall_st.webp'
+            'image_url' => 'images/movies/the_wolf.webp'
         ]);
 
         Movie::factory()->create([
